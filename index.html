@@ -44,8 +44,9 @@
             padding: 15px 0;
         }
 
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); text-decoration: none; display: flex; align-items: center; }
+        .logo { font-size: 1.2rem; font-weight: bold; color: var(--primary-color); text-decoration: none; display: flex; align-items: center; }
         .logo-icon { color: var(--secondary-color); margin-right: 10px; font-size: 1.8rem; }
+        .full-name { font-size: 0.9rem; margin-left: 10px; color: #7f8c8d; font-weight: normal; border-left: 1px solid #ddd; padding-left: 10px; }
 
         .nav-links { display: flex; gap: 25px; list-style: none; }
         .nav-links a { font-weight: 500; color: var(--primary-color); text-decoration: none; cursor: pointer; transition: 0.3s; }
@@ -132,9 +133,12 @@
     <header>
         <div class="container">
             <nav>
-                <a onclick="showPage('home')" class="logo" style="cursor: pointer;">
-                    <span class="logo-icon">🦧</span> DSŞKYD
-                </a>
+                <div style="display: flex; align-items: center;">
+                    <a onclick="showPage('home')" class="logo" style="cursor: pointer;">
+                        <span class="logo-icon">🦧</span> DSŞKYD
+                    </a>
+                    <span class="full-name">Down Sendromlu Şempanzeleri Koruma ve Yaşatma Derneği</span>
+                </div>
                 <ul class="nav-links">
                     <li><a onclick="showPage('home')">Ana Sayfa</a></li>
                     <li><a onclick="showPage('articles')">Makaleler</a></li>
@@ -214,14 +218,9 @@
 
     <script>
         function showPage(pageId) {
-            // Tüm sayfaları gizle
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
-            
-            // Seçilen sayfayı göster
             document.getElementById(pageId).classList.add('active');
-            
-            // Sayfa başına kaydır
             window.scrollTo(0, 0);
         }
     </script>
